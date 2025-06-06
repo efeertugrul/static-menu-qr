@@ -13,8 +13,11 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),
-        menu: resolve(__dirname, 'menu.html'),
+        menu: resolve(__dirname, 'frontend/menu.html'),
       },
     },
+  },
+  server: {
+    open: '/frontend/index.html',
   },
 });

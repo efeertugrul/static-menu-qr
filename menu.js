@@ -88,10 +88,23 @@ function init() {
     const jsonString = pako.inflate(compressed, { to: 'string' });
 
     // 3. Parse JSON
-    const menuData = JSON.parse(jsonString);
+    const payload = JSON.parse(jsonString);
 
-    // 4. Render
-    renderMenu(menuData);
+    // Check for the new data structure with metadata, otherwise assume old structure
+    if (payload && payload.menu && payload.meta) {
+      renderMenu(payload.menu);
+
+      // Populate the hidden footer for inspection
+      const generationDateEl = document.getElementById('generation-date');
+      const referenceIdEl = document.getElementById('reference-id');
+
+      if (generationDateEl && referenceIdEl && payload.meta.ts) {
+        generationDateEl.textContent = payload.meta.ts;
+        referenceIdEl.textContent = payload.meta.eid || '';
+      }
+    } else {
+      renderMenu(payload); // Backwards compatibility
+    }
   } catch (error) {
     console.error('Failed to load or render menu:', error);
     container.innerHTML = `<p class="error">Error: Could not display the menu. The link may be corrupted. <br/>(${error.message})</p>`;

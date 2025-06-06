@@ -177,3 +177,14 @@ body {
     font-size: 1.5rem;
   }
 }
+
+.menu-item p {
+  margin: 5px 0 0;
+  color: #555;
+  font-size: 0.9em;
+  line-height: 1.4;
+}
+
+.menu-footer {
+  display: none; /* Hidden from view but available in the DOM for inspection */
+}
