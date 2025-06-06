@@ -8,10 +8,11 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-    <script type="module" crossorigin src="/static-menu-qr/assets/v2-c0nG0IpP.js"></script>
-    <link rel="modulepreload" crossorigin href="/static-menu-qr/assets/pako.esm-QfSfXnLH.js">
-    <link rel="modulepreload" crossorigin href="/static-menu-qr/assets/qrcode-Bq4qzWCy.js">
-    <link rel="stylesheet" crossorigin href="/static-menu-qr/assets/qrcode-BBKItcMd.css">
+    <script type="module" crossorigin src="/static-menu-qr/assets/v2-hIJXGusj.js"></script>
+    <link rel="modulepreload" crossorigin href="/static-menu-qr/assets/pako.esm-BpSz_pCI.js">
+    <link rel="modulepreload" crossorigin href="/static-menu-qr/assets/qrcode-BB1qHw6L.js">
+    <link rel="modulepreload" crossorigin href="/static-menu-qr/assets/renderer-Cp9WJrM7.js">
+    <link rel="stylesheet" crossorigin href="/static-menu-qr/assets/pako-CvTjZG5X.css">
   </head>
   <body>
     <div id="app">
@@ -71,6 +72,31 @@
               placeholder="e.g., 'My Awesome Cafe Menu'"
             />
           </div>
+          <div class="appearance-container">
+            <h3><i class="fas fa-paint-brush"></i> Appearance</h3>
+            <div class="control-grid">
+              <div class="control">
+                <label for="primary-color">Primary Color</label>
+                <input type="color" id="primary-color" value="#333333" />
+              </div>
+              <div class="control">
+                <label for="text-color">Text Color</label>
+                <input type="color" id="text-color" value="#555555" />
+              </div>
+              <div class="control">
+                <label for="font-select">Font Family</label>
+                <select id="font-select">
+                  <option value="'Inter', sans-serif">Inter (default)</option>
+                  <option value="'Roboto', sans-serif">Roboto</option>
+                  <option value="'Lato', sans-serif">Lato</option>
+                  <option value="'Playfair Display', serif">
+                    Playfair Display
+                  </option>
+                  <option value="'Lobster', cursive">Lobster</option>
+                </select>
+              </div>
+            </div>
+          </div>
           <div id="menu-sections">
             <!-- Dynamic content -->
           </div>
@@ -103,12 +129,8 @@
 
             <div class="menu-preview-container">
               <h3>Customer View</h3>
-              <div class="iframe-wrapper">
-                <iframe
-                  id="preview-iframe"
-                  title="Menu Preview"
-                  src="about:blank"
-                ></iframe>
+              <div id="live-preview-content" class="menu-container">
+                <!-- Live preview will be rendered here -->
               </div>
             </div>
           </div>
