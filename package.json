@@ -1,0 +1,30 @@
+{
+  "name": "frontend",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "homepage": "https://efeertugrul.github.io/static-menu-qr",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d dist -b gh-pages -o origin"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.28.0",
+    "eslint": "^9.28.0",
+    "eslint-config-prettier": "^10.1.5",
+    "eslint-plugin-prettier": "^5.4.1",
+    "gh-pages": "^6.3.0",
+    "globals": "^16.2.0",
+    "prettier": "^3.5.3",
+    "vite": "^6.3.5"
+  },
+  "dependencies": {
+    "pako": "^2.1.0",
+    "qrcode-generator": "^1.4.4"
+  }
+}

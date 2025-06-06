@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Static Menu QR Generator</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <header class="app-header">
+        <div class="logo">
+          <i class="fas fa-qrcode"></i>
+          <h1>Menu QR Code Generator</h1>
+        </div>
+        <p class="subtitle">
+          Create a beautiful, static, and fast-loading menu for your restaurant
+          or cafe.
+        </p>
+      </header>
+
+      <main class="main-content">
+        <div class="editor-pane">
+          <div class="pane-header">
+            <h2><i class="fas fa-edit"></i> Menu Editor</h2>
+            <div class="controls">
+              <button
+                id="add-section-btn"
+                class="tooltip"
+                data-tooltip="Add a new section like 'Appetizers' or 'Desserts'"
+              >
+                <i class="fas fa-plus"></i> Add Section
+              </button>
+              <button
+                id="save-json-btn"
+                class="tooltip"
+                data-tooltip="Save your menu structure to a JSON file."
+              >
+                <i class="fas fa-save"></i> Save Menu
+              </button>
+              <button
+                id="load-json-btn"
+                class="tooltip"
+                data-tooltip="Load a previously saved menu from a JSON file."
+              >
+                <i class="fas fa-folder-open"></i> Load Menu
+              </button>
+              <input
+                type="file"
+                id="json-file-input"
+                accept="application/json"
+                style="display: none"
+              />
+            </div>
+          </div>
+          <div id="menu-sections">
+            <!-- Dynamic content -->
+          </div>
+        </div>
+
+        <aside class="preview-pane">
+          <div class="pane-header">
+            <h2><i class="fas fa-eye"></i> Preview & QR Code</h2>
+          </div>
+          <div class="output">
+            <div class="qr-code-container">
+              <div id="qr-code-placeholder">
+                <i class="fas fa-qrcode"></i>
+                <p>Your QR code will appear here.</p>
+              </div>
+              <img id="qr-code-img" src="" alt="QR Code" hidden />
+              <div class="size-counter">
+                <span id="size-display">0 characters</span>
+                <p id="size-warning" class="size-warning" hidden>
+                  <i class="fas fa-exclamation-triangle"></i> Menu size is
+                  large, QR may be hard to scan.
+                </p>
+              </div>
+            </div>
+
+            <div class="menu-preview-container">
+              <h3>Customer View</h3>
+              <div class="iframe-wrapper">
+                <iframe
+                  id="preview-iframe"
+                  title="Menu Preview"
+                  src="about:blank"
+                ></iframe>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </main>
+    </div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
